@@ -1,3 +1,9 @@
+/*
+ * The contents of this file are included with the system,
+ * so no longer needed.
+ */
+#ifdef notdef
+
 /* This is from the BIND 4.9.4 release, modified to compile by itself */
 
 /* Copyright (c) 1996 by Internet Software Consortium.
@@ -196,3 +202,5 @@ inet_ntop6(src, dst, size)
 	strcpy(dst, tmp);
 	return (dst);
 }
+
+#endif /* notdef */

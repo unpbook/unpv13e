@@ -11,11 +11,9 @@ Execute the following from the src/ directory:
     cd ../libfree  # continue building the basic library
     make
 
+    # note the following two lines are not needed on Linux systems
     cd ../libroute # only if your system supports 4.4BSD style routing sockets
     make           # only if your system supports 4.4BSD style routing sockets
-
-    cd ../libxti   # only if your system supports XTI
-    make           # only if your system supports XTI
 
     cd ../intro    # build and test a basic client program
     make daytimetcpcli
