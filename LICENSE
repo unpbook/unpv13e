@@ -1,0 +1,36 @@
+Richard Stevens passed away before the third edition of
+UNIX Network Programming, Volume 1 was published, but the
+new authors, Bill Fenner and Andy Rudoff, have tried to carry
+forward his intentions.  Mr. Stevens didn't include an explicit
+LICENSE file in his original source tree, however some files
+contained the following license text:
+
+/*
+ * Copyright (c) 1996 W. Richard Stevens.  All rights reserved.
+ *
+ * Permission to use or modify this software for educational or
+ * for commercial purposes, and without fee, is hereby granted,
+ * provided that the above copyright notice appears in connection
+ * with any and all uses, with clear indication as to any
+ * modifications made.  The author RESERVES the sole rights of
+ * reproduction, publication and distribution and hence permission
+ * to print this source code in any book, reference manual,
+ * magazine, or other type of publication, including any digital
+ * medium, must be granted in writing by W. Richard Stevens.
+ *
+ * The author makes no representations about the suitability of this
+ * software for any purpose.  It is provided "as is" without express
+ * or implied warranty.
+ */
+
+Some additional comments from his web site:
+
+        [Richard Stevens wrote...]
+        The code is available to anyone on the Internet and should
+        compile easily on most current Unix systems.  The majority of
+        the 10,000 lines of C code are functions that one can use as
+        building blocks (a network programming toolchest) inside their
+        own network applications.  Many of these functions help hide
+        the differences between IPv4 and IPv6, and can aid the reader
+        in developing protocol-independent code.
+
