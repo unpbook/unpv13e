@@ -28,7 +28,7 @@ main(int argc, char **argv)
 	evnts.sctp_peer_error_event = 1;
 	evnts.sctp_shutdown_event = 1;
 	evnts.sctp_partial_delivery_event = 1;
-	evnts.sctp_adaption_layer_event = 1;
+	evnts.sctp_adaptation_layer_event = 1;
 	Setsockopt(sock_fd, IPPROTO_SCTP, SCTP_EVENTS,
 		   &evnts, sizeof(evnts));
 

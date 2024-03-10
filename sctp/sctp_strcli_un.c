@@ -22,7 +22,7 @@ sctpstr_cli(FILE *fp, int sock_fd, struct sockaddr *to, socklen_t tolen)
 		Sctp_sendmsg(sock_fd, sendline, out_sz, 
 			     to, tolen, 
 			     0,
-			     MSG_UNORDERED,
+			     SCTP_UNORDERED,
 			     sri.sinfo_stream,
 			     0, 0);
 /* end mod_unordered */

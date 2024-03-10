@@ -76,11 +76,11 @@ print_notification(char *notify_buf)
 		printf("SCTP_SEND_FAILED: assoc=0x%x error=%d\n",
 		       (uint32_t)ssf->ssf_assoc_id, ssf->ssf_error);
 		break;
-	case SCTP_ADAPTION_INDICATION:
-		ae = &snp->sn_adaption_event;
-		printf("SCTP_ADAPTION_INDICATION: 0x%x\n",
-		    (u_int)ae->sai_adaption_ind);
-		break;
+	// case SCTP_ADAPTATION_INDICATION:
+	// 	ae = &snp->sn_adaptation_event;
+	// 	printf("SCTP_ADAPTION_INDICATION: 0x%x\n",
+	// 	    (u_int)ae->sai_adaption_ind);
+	// 	break;
 	case SCTP_PARTIAL_DELIVERY_EVENT:
 	    pdapi = &snp->sn_pdapi_event;
 	    if(pdapi->pdapi_indication == SCTP_PARTIAL_DELIVERY_ABORTED)

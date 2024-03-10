@@ -1,9 +1,9 @@
 include ../Make.defines
 
-PROGS =	sctpserv01 sctpclient01 sctpserv02 sctpserv03 sctpclient02 sctpserv04 \
+PROGS =	obj_sctp_o sctpserv01 sctpclient01 sctpserv02 sctpserv03 sctpclient02 sctpserv04 \
 sctpserv05 sctpclient03 sctpserv06 sctpserv07 sctpclient04 sctpserv_fork
 
-LIBS+= -L/usr/local/v6/lib -lm -lsctp
+LIBS+= sctp_wrapper.o sctp_getnostrm.o sctp_addr_to_associd.o -lm -lsctp
 
 .c.lc:
 	../../troff/fixcode.sh $< > $@
@@ -13,8 +13,11 @@ LIBS+= -L/usr/local/v6/lib -lm -lsctp
 CFLAGS+= -g
 all:	${PROGS}
 
+obj_sctp_o:
+	${CC} ${CFLAGS} -c sctp_addr_to_associd.c sctp_wrapper.c sctp_getnostrm.c
+
 sctpserv01:	sctpserv01.o 
-		${CC} ${CFLAGS} -o $@ sctpserv01.o ${LIBS}
+		${CC} ${CFLAGS} -o $@ sctpserv01.o  ${LIBS} 
 
 
 sctpclient01:   sctpclient01.o sctp_strcli.o sctp_strcliecho.o
@@ -36,7 +39,7 @@ sctpserv05:	sctpserv05.o sctp_pdapircv.o
 sctpserv06:	sctpserv06.o sctp_displayevents.o
 		${CC} ${CFLAGS} -o $@ sctpserv06.o sctp_displayevents.o  ${LIBS}
 
-sctpclient02:	sctpclient02.o sctp_strcli.o sctp_strcliecho.o
+sctpclient02: sctpclient02.o sctp_strcli.o sctp_strcliecho.o
 		${CC} ${CFLAGS} -o $@ sctpclient02.o sctp_strcli.o sctp_strcliecho.o ${LIBS}
 
 sctpclient03:  sctpclient01.o sctp_strcli_un.o sctp_strcliecho.o
@@ -49,8 +52,8 @@ sctpserv07:	sctpserv07.o sctp_displayevents.o sctp_bindargs.o
 sctpclient04:	sctpclient04.o sctp_strcli1.o sctp_check_notify.o sctp_print_addrs.o sctp_modify_hb.o
 		${CC} ${CFLAGS} -o $@ sctpclient04.o sctp_strcli1.o sctp_check_notify.o sctp_print_addrs.o ${LIBS}
 
-sctpserv_fork:  sctpserv_fork.o sctp_addr_to_associd.o
-		${CC} ${CFLAGS} -o $@ sctpserv_fork.o sctp_addr_to_associd.o ${LIBS}
+sctpserv_fork:  sctpserv_fork.o
+		${CC} ${CFLAGS} -o $@ sctpserv_fork.o ${LIBS}
 
 clean:
 		rm -f ${PROGS} ${CLEANFILES}
