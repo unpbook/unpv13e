@@ -17,6 +17,7 @@ Execute the following from the src/ directory:
 
     cd ../intro    # build and test a basic client program
     make daytimetcpcli
+    ./daytimetcpcli &
     ./daytimetcpcli 127.0.0.1
 
 If all that works, you're all set to start compiling individual programs.
