@@ -2,6 +2,9 @@
 #include	"unpthread.h"
 #include	"pthread08.h"
 
+Thread	*tptr;		/* array of Thread structures; calloc'ed */
+int					clifd[MAXNCLI], iget, iput;
+
 static int			nthreads;
 pthread_mutex_t		clifd_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t		clifd_cond = PTHREAD_COND_INITIALIZER;

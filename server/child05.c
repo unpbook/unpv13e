@@ -2,6 +2,8 @@
 #include	"unp.h"
 #include	"child.h"
 
+Child	*cptr;		/* array of Child structures; calloc'ed */
+
 pid_t
 child_make(int i, int listenfd, int addrlen)
 {

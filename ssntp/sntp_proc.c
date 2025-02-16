@@ -10,7 +10,7 @@ sntp_proc(char *buf, ssize_t n, struct timeval *nowptr)
 	struct ntpdata	*ntp;
 
 	if (n < (ssize_t)sizeof(struct ntpdata)) {
-		printf("\npacket too small: %d bytes\n", n);
+		printf("\npacket too small: %ld bytes\n", n);
 		return;
 	}
 

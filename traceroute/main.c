@@ -1,5 +1,20 @@
 #include	"trace.h"
 
+			/* globals */
+char	 recvbuf[BUFSIZE];
+char	 sendbuf[BUFSIZE];
+
+int		 datalen;			/* # bytes of data following ICMP header */
+char	*host;
+u_short	 sport, dport;
+int		 nsent;				/* add 1 for each sendto() */
+pid_t	 pid;				/* our PID */
+int		 probe, nprobes;
+int		 sendfd, recvfd;	/* send on UDP sock, read on raw ICMP sock */
+int		 ttl, max_ttl;
+int		 verbose;
+struct proto *pr;
+
 struct proto	proto_v4 = { icmpcode_v4, recv_v4, NULL, NULL, NULL, NULL, 0,
 							 IPPROTO_ICMP, IPPROTO_IP, IP_TTL };
 

@@ -5,4 +5,4 @@ typedef struct {
   long		child_count;	/* # connections handled */
 } Child;
 
-Child	*cptr;		/* array of Child structures; calloc'ed */
+extern Child	*cptr;		/* array of Child structures; calloc'ed */

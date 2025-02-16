@@ -1,5 +1,16 @@
 #include	"ping.h"
 
+			/* globals */
+char	 sendbuf[BUFSIZE];
+
+int		 datalen;			/* # bytes of data following ICMP header */
+char	*host;
+int		 nsent;				/* add 1 for each sendto() */
+pid_t	 pid;				/* our PID */
+int		 sockfd;
+int		 verbose;
+struct proto *pr;
+
 struct proto	proto_v4 = { proc_v4, send_v4, NULL, NULL, NULL, 0, IPPROTO_ICMP };
 
 #ifdef	IPV6

@@ -18,5 +18,5 @@ dg_cli(FILE *fp, int sockfd, const SA *pservaddr, socklen_t servlen)
 
 	n = Recvfrom(sockfd, recvline, MAXLINE, 0, NULL, NULL);
 
-	printf("received %d bytes\n", n);
+	printf("received %ld bytes\n", n);
 }

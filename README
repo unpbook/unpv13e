@@ -16,7 +16,8 @@ Execute the following from the src/ directory:
     make           # only if your system supports 4.4BSD style routing sockets
 
     cd ../intro    # build and test a basic client program
-    make daytimetcpcli
+    make
+		./daytimetcpsrv		# must run this step as root
     ./daytimetcpcli 127.0.0.1
 
 If all that works, you're all set to start compiling individual programs.

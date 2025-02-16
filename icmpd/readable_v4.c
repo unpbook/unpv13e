@@ -22,7 +22,7 @@ readable_v4(void)
 	len = sizeof(from);
 	n = Recvfrom(fd4, buf, MAXLINE, 0, (SA *) &from, &len);
 
-	printf("%d bytes ICMPv4 from %s:",
+	printf("%ld bytes ICMPv4 from %s:",
 		   n, Sock_ntop_host((SA *) &from, len));
 
 	ip = (struct ip *) buf;		/* start of IP header */

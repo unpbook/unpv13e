@@ -2,6 +2,7 @@
 #include	"unpthread.h"
 #include	"pthread07.h"
 
+Thread	*tptr;		/* array of Thread structures; calloc'ed */
 pthread_mutex_t	mlock = PTHREAD_MUTEX_INITIALIZER;
 
 int

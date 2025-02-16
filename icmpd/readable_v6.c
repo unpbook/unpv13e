@@ -28,7 +28,7 @@ readable_v6(void)
 	len = sizeof(from);
 	n = Recvfrom(fd6, buf, MAXLINE, 0, (SA *) &from, &len);
 
-	printf("%d bytes ICMPv6 from %s:",
+	printf("%ld bytes ICMPv6 from %s:",
 		   n, Sock_ntop_host((SA *) &from, len));
 
 	icmp6 = (struct icmp6_hdr *) buf;		/* start of ICMPv6 header */

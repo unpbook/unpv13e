@@ -42,7 +42,7 @@ dowrite(int fd, const void *vptr, size_t nbytes)
 		n = (nleft >= chunksize) ? chunksize : nleft;
 		iov[i].iov_len = n;
 		if (verbose)
-			fprintf(stderr, "iov[%2d].iov_base = %x, iov[%2d].iov_len = %d\n",
+			fprintf(stderr, "iov[%2d].iov_base = %p, iov[%2d].iov_len = %ld\n",
 						i, iov[i].iov_base, i, iov[i].iov_len);
 		ptr += n;
 		if ((nleft -= n) == 0)

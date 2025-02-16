@@ -3,7 +3,7 @@
 #define	MAXFILES	20
 #define	SERV		"80"	/* port number or service name */
 
-struct file {
+extern struct file {
   char	*f_name;			/* filename */
   char	*f_host;			/* hostname or IPv4/IPv6 address */
   int    f_fd;				/* descriptor */
@@ -17,8 +17,8 @@ struct file {
 #define	GET_CMD		"GET %s HTTP/1.0\r\n\r\n"
 
 			/* globals */
-int		nconn, nfiles, nlefttoconn, nlefttoread, maxfd;
-fd_set	rset, wset;
+extern int		nconn, nfiles, nlefttoconn, nlefttoread, maxfd;
+extern fd_set	rset, wset;
 
 			/* function prototypes */
 void	home_page(const char *, const char *);

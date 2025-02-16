@@ -13,18 +13,18 @@ struct rec {					/* format of outgoing UDP data */
 };
 
 			/* globals */
-char	 recvbuf[BUFSIZE];
-char	 sendbuf[BUFSIZE];
+extern char	 recvbuf[BUFSIZE];
+extern char	 sendbuf[BUFSIZE];
 
-int		 datalen;			/* # bytes of data following ICMP header */
-char	*host;
-u_short	 sport, dport;
-int		 nsent;				/* add 1 for each sendto() */
-pid_t	 pid;				/* our PID */
-int		 probe, nprobes;
-int		 sendfd, recvfd;	/* send on UDP sock, read on raw ICMP sock */
-int		 ttl, max_ttl;
-int		 verbose;
+extern int		 datalen;			/* # bytes of data following ICMP header */
+extern char	*host;
+extern u_short	 sport, dport;
+extern int		 nsent;				/* add 1 for each sendto() */
+extern pid_t	 pid;				/* our PID */
+extern int		 probe, nprobes;
+extern int		 sendfd, recvfd;	/* send on UDP sock, read on raw ICMP sock */
+extern int		 ttl, max_ttl;
+extern int		 verbose;
 
 			/* function prototypes */
 const char	*icmpcode_v4(int);
@@ -35,7 +35,7 @@ void	 sig_alrm(int);
 void	 traceloop(void);
 void	 tv_sub(struct timeval *, struct timeval *);
 
-struct proto {
+extern struct proto {
   const char	*(*icmpcode)(int);
   int	 (*recv)(int, struct timeval *);
   struct sockaddr  *sasend;	/* sockaddr{} for send, from getaddrinfo */

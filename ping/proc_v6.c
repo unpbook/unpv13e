@@ -32,7 +32,7 @@ proc_v6(char *ptr, ssize_t len, struct msghdr *msg, struct timeval* tvrecv)
 				break;
 			}
 		}
-		printf("%d bytes from %s: seq=%u, hlim=",
+		printf("%ld bytes from %s: seq=%u, hlim=",
 				len, Sock_ntop_host(pr->sarecv, pr->salen),
 				icmp6->icmp6_seq);
 		if (hlim == -1)
@@ -41,7 +41,7 @@ proc_v6(char *ptr, ssize_t len, struct msghdr *msg, struct timeval* tvrecv)
 			printf("%d", hlim);
 		printf(", rtt=%.3f ms\n", rtt);
 	} else if (verbose) {
-		printf("  %d bytes from %s: type = %d, code = %d\n",
+		printf("  %ld bytes from %s: type = %d, code = %d\n",
 				len, Sock_ntop_host(pr->sarecv, pr->salen),
 				icmp6->icmp6_type, icmp6->icmp6_code);
 	}

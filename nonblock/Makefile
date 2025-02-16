@@ -1,6 +1,6 @@
 include ../Make.defines
 
-PROGS =	daytimetcpcli tcpcli01 tcpcli02 tcpcli03 tcpcli04 tcpservselect02 web
+PROGS =	daytimetcpcli tcpcli01 tcpcli02 tcpcli03 tcpcli04 web
 
 all:	${PROGS}
 

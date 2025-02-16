@@ -6,14 +6,14 @@
 #define	BUFSIZE		1500
 
 			/* globals */
-char	 sendbuf[BUFSIZE];
+extern char	 sendbuf[BUFSIZE];
 
-int		 datalen;			/* # bytes of data following ICMP header */
-char	*host;
-int		 nsent;				/* add 1 for each sendto() */
-pid_t	 pid;				/* our PID */
-int		 sockfd;
-int		 verbose;
+extern int		 datalen;			/* # bytes of data following ICMP header */
+extern char	*host;
+extern int		 nsent;				/* add 1 for each sendto() */
+extern pid_t	 pid;				/* our PID */
+extern int		 sockfd;
+extern int		 verbose;
 
 			/* function prototypes */
 void	 init_v6(void);
@@ -25,7 +25,7 @@ void	 readloop(void);
 void	 sig_alrm(int);
 void	 tv_sub(struct timeval *, struct timeval *);
 
-struct proto {
+extern struct proto {
   void	 (*fproc)(char *, ssize_t, struct msghdr *, struct timeval *);
   void	 (*fsend)(void);
   void	 (*finit)(void);

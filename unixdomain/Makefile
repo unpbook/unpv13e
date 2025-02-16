@@ -1,7 +1,12 @@
 include ../Make.defines
 
+#
+#PROGS =	daytimetcpcli daytimetcpsrv2 mycat openfile \
+#	tfcred01 unixbind unixstrcli01 unixstrserv01 unixstrserv02
+#
+# pull out ucred.h consumers...
 PROGS =	daytimetcpcli daytimetcpsrv2 mycat openfile \
-	tfcred01 unixbind unixstrcli01 unixstrserv01 unixstrserv02
+	unixbind unixstrcli01 unixstrserv01
 
 all:	${PROGS}
 

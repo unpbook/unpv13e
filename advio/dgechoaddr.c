@@ -36,7 +36,7 @@ dg_echo(int sockfd, SA *pcliaddr, socklen_t clilen)
 										str, sizeof(str)));
 		if (pktinfo.ipi_ifindex > 0)
 			printf(", recv i/f = %s",
-				   If_indextoname(pktinfo.ipi_ifindex, ifname));
+				   if_indextoname(pktinfo.ipi_ifindex, ifname));
 #ifdef	MSG_TRUNC
 		if (flags & MSG_TRUNC)	printf(" (datagram truncated)");
 #endif

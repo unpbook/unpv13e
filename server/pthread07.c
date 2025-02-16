@@ -1,6 +1,9 @@
 #include	"unpthread.h"
 #include	"pthread07.h"
 
+int				listenfd, nthreads;
+socklen_t		addrlen;
+
 void
 thread_make(int i)
 {

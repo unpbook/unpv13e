@@ -1,6 +1,11 @@
 /* include web1 */
 #include	"web.h"
 
+			/* globals */
+struct file file[MAXFILES];
+int		nconn, nfiles, nlefttoconn, nlefttoread, maxfd;
+fd_set	rset, wset;
+
 int
 main(int argc, char **argv)
 {
