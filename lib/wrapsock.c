@@ -73,6 +73,15 @@ Getsockopt(int fd, int level, int optname, void *optval, socklen_t *optlenptr)
 }
 
 #ifdef	HAVE_INET6_RTH_INIT
+/* Routing Header Option (RFC 3542).  */
+extern socklen_t inet6_rth_space (int __type, int __segments) __THROW;
+extern void *inet6_rth_init (void *__bp, socklen_t __bp_len, int __type,
+			     int __segments) __THROW;
+extern int inet6_rth_add (void *__bp, const struct in6_addr *__addr) __THROW;
+extern int inet6_rth_reverse (const void *__in, void *__out) __THROW;
+extern int inet6_rth_segments (const void *__bp) __THROW;
+extern struct in6_addr *inet6_rth_getaddr (const void *__bp, int __index)
+     __THROW;
 int
 Inet6_rth_space(int type, int segments)
 {
