@@ -31,7 +31,7 @@ readline(int fd, void *vptr, size_t maxlen)
 	ssize_t	n, rc;
 	char	c, *ptr;
 
-	ptr = vptr;
+	ptr = (char *) vptr;
 	for (n = 1; n < maxlen; n++) {
 		if ( (rc = my_read(fd, &c)) == 1) {
 			*ptr++ = c;
